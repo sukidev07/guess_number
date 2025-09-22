@@ -13,6 +13,12 @@ user_guess = int(input("Enter your guess: "))
 if user_guess == secret_number:
     # This block runs ONLY if the guess is correct.
     print("You got it! Congratulations!")
+elif user_guess < secret_number:
+    # This block runs if the guess is too low.
+    print("Too low! Try guessing a little higher.")
+elif user_guess > secret_number:
+    # This block runs if the guess is too high.
+    print("Too high! Try guessing a little lower.")
 else:
     # This block runs ONLY if the guess is incorrect.
     print("Sorry, that's not the correct number.")
