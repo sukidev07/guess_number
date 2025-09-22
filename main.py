@@ -1,32 +1,14 @@
 # This is our first Python program!
 # Adding imports to the tool box.
-# Imports are powerful external and internally created  functions that perform tasks
-# In this example we are going to keep it simple and use a time import as a widely accepted and powerful function to get the time.
-import time     # Time import function
+# Moved function to its own location
+# Created to import generated_servret_number.py
+import ran_num_1_10
 
-# Creating a function inside the code first and testing.
-# Function is defined to validate an incoming seed value the player inputs and has the range between 1-10
-# Issue with fucntion is this is a repeatable seed amount
-def generate_secret_number():
-    # 1. Get a starting number (seed) from the player.
-    seed = time.time()
-    
-    # 2. Perform a calculation to make the number less predictable.
-    # These numbers (13, 7) are arbitrary; they just mix up the seed.
-    mangled_number = (seed * 13) + 7
-    
-    # 3. Use the modulo operator to get the number into a range of 0-9.
-    number_in_range = mangled_number % 10
-    
-    # 4. Add 1 to shift the range to 1-10.
-    final_number = number_in_range + 1
-    
-    # 5. Send the final result back to wherever the function was called.
-    return final_number
 
 # Moved variables higher in the stack to validate the print statements
 # We create a variable to store our secret number.
-secret_number = generate_secret_number()
+secret_number = ran_num_1_10.ran_num_1_10()
+
 
 # guess_count defines the total number of guesses allowed
 guess_count = 3
