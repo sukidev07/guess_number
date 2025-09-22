@@ -1,11 +1,15 @@
 # This is our first Python program!
+# Adding imports to the tool box.
+# Imports are powerful external and internally created  functions that perform tasks
+# In this example we are going to keep it simple and use a time import as a widely accepted and powerful function to get the time.
+import time     # Time import function
 
 # Creating a function inside the code first and testing.
 # Function is defined to validate an incoming seed value the player inputs and has the range between 1-10
 # Issue with fucntion is this is a repeatable seed amount
 def generate_secret_number():
     # 1. Get a starting number (seed) from the player.
-    seed = int(input("To start, enter any number to generate the secret number: "))
+    seed = time.time()
     
     # 2. Perform a calculation to make the number less predictable.
     # These numbers (13, 7) are arbitrary; they just mix up the seed.
@@ -20,7 +24,7 @@ def generate_secret_number():
     # 5. Send the final result back to wherever the function was called.
     return final_number
 
-# # Moved variables higher in the stack to validate the print statements
+# Moved variables higher in the stack to validate the print statements
 # We create a variable to store our secret number.
 secret_number = generate_secret_number()
 
