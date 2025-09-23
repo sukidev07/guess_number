@@ -8,17 +8,20 @@ import ran_num_1_10, player_num_guess
 # We create a variable to store our secret number.
 secret_number = ran_num_1_10.ran_num_1_10()
 
-# guess_count defines the total number of guesses allowed
-guess_count = 3
+# Adding in min_max range values for the guessing game
+min_range = 1
+max_range = 10
+guess_count = 3 # guess_count defines the total number of guesses allowed
 
 # The print() function displays text on the screen.
 print("Welcome to the Guess the Number Game!")
-print("I'm thinking of a number between 1 and 10.")
+print(f"I'm thinking of a number between {min_range} and {max_range}.")
 print(f"You have {guess_count} to guess the number.")
 
 # Breaking out into a new DRY method we need a method to get a response outside the while loop
 # Get the users first guess
-user_guess = player_num_guess.get_player_guess()
+# need to pass through the min_range and max_range values to the player guess else it fails
+user_guess = player_num_guess.get_player_guess(min_range, max_range) 
 guess_count -= 1 # Still need to redact a single guess the count down begins
 
 # Refactor the while loop - interesting my original thought now comes into play.
@@ -31,7 +34,7 @@ while user_guess != secret_number and guess_count != 0:
 
     print(f"{guess_count} guesses left")
 
-    user_guess = player_num_guess.get_player_guess()
+    user_guess = player_num_guess.get_player_guess(min_range, max_range)
     guess_count -= 1
 if user_guess == secret_number:
     print(f"Congratulations! You guessed the number in {guess_count + 1}/3 guesses. The secret number was {secret_number}!")
