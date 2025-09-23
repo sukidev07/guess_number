@@ -2,16 +2,18 @@
 # Adding imports to the tool box.
 # Moved function to its own location
 # Created to import generated_servret_number.py
-import ran_num_1_10, player_num_guess
+import ran_num_mod, player_num_guess
+
+# Moved to the top for ingestion (order of operation)
+# Adding in min_max range values for the guessing game
+min_range = 1
+max_range = 50
+guess_count = 3 # guess_count defines the total number of guesses allowed
 
 # Moved variables higher in the stack to validate the print statements
 # We create a variable to store our secret number.
-secret_number = ran_num_1_10.ran_num_1_10()
-
-# Adding in min_max range values for the guessing game
-min_range = 1
-max_range = 10
-guess_count = 3 # guess_count defines the total number of guesses allowed
+# Adding min-max_range to be addeed in to validate these values for the secret guess and updating ran_num_mod
+secret_number = ran_num_mod.ran_num_mod(min_range, max_range)
 
 # The print() function displays text on the screen.
 print("Welcome to the Guess the Number Game!")
