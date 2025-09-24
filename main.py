@@ -2,8 +2,12 @@
 # Adding imports to the tool box.
 # Moved function to its own location
 # Created to import generated_servret_number.py
-import ran_num_mod, player_num_guess
+import ran_num_mod, player_num_guess, num_lvl_select
 
+# Game CORE variables
+min_range = 0
+max_range = 0
+guess_count = 0
 # Changing up the game require use input before playing.
 # We want to see what skill level, 1-10:(3) 1-20:(4) 1-100(5)
 print("# # # # # # # # # # # # # # # # # # # # #")
@@ -23,32 +27,8 @@ print("#     + + + + + + + + + + + + + + +     #")
 print("#                                       #")
 print("# # # # # # # # # # # # # # # # # # # # #")
 print("")
-choice = input("Select:").lower
-
-## I need to add error handling somewhere around these parts might need to break out choice into a new mod
-
-# Define the levels:
-if choice == 1 or 'easy':
-    min_range = 1
-    max_range = 10
-    guess_count = 3
-elif choice == 2 or 'medium' or 'med':
-    min_range = 1
-    max_range = 20
-    guess_count = 3
-elif choice == 3 or 'hard':
-    min_range = 1
-    max_range = 100
-    guess_count = 4
-#elif choice == 4 or 'custom':
-#    min_range = user_min
-#    max_range = user_max
-#    guess_count = user_count
-else:
-    print("Invalid selection. Defaulting to easy mode.")
-    min_range = 1
-    max_range = 10
-    guess_count = 3
+# We need a level select, call module num_lvl_select.py
+num_lvl_select.level_select(min_range, max_range, guess_count)
     
 # Game should actually start here:
 
