@@ -17,3 +17,4 @@ def get_player_guess(MIN_RANGE, MAX_RANGE, prompt="Enter your guess: "):
         except ValueError:
             # If a ValueError occurs, print a message and the loop will repeat
             print(f"You did not enter a number. Please enter a whole number within range {MIN_RANGE}-{MAX_RANGE}.")
+            

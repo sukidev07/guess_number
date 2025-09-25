@@ -50,10 +50,18 @@ while True:
         print(f"Sorry, you have {GUESS_COUNT} guesses left.")
         print(f"Game over. The number was {secret_number}.")
     
-    # part of the replay logic; yes or y lets you continue else all other break
-    print("Do you want to play again?")
-    play_again = input("Enter: Yes to play again: ").lower()
-    if play_again != "yes" and play_again != "y": # continue the game or break to end
-        break
-
-
+    # Continue playing or exit game
+    while True:
+        try:
+            print("Do you want to play again?")
+            play_again = input("Select: (Yes) or (No): ").lower()
+            if play_again == "yes" or play_again == "y" or play_again == "yeah" or play_again == "yup" or play_again == "continue":
+                break
+            elif play_again == "no" or play_again == "n" or play_again == "nah" or play_again == "nope" or play_again == "quit":
+                print("Thanks for playing!")
+                exit()
+            else:
+                print(f"{play_again} is an invalid choice!")
+                print("Please enter: 'Yes' or 'No'.")
+        except ValueError:
+            print("Invalid input. Please enter 'yes' or 'no'.")
